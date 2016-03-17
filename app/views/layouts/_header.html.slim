@@ -7,8 +7,8 @@ nav.navbar.navbar-default
       li= link_to 'Datasets', '#'
       li= link_to 'Datacenters', '#'
     .navbar-right
-      - if false
-        = link_to '#', class: 'btn btn-default navbar-btn'
+      - if true
+        = link_to 'auth/github', class: 'btn btn-default navbar-btn'
           i.fa.fa-github
           | &nbsp;
           | Sign In

@@ -27,6 +27,12 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 
+# access control stuff
+gem 'omniauth-github'
+
+# better console (useful even in production)
+gem 'pry-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -51,4 +57,7 @@ group :development do
   # linting stuff
   gem 'rubocop'
   gem 'scss-lint'
+
+  # shut up useless logs
+  gem 'quiet_assets'
 end
