@@ -29,6 +29,7 @@ gem 'font-awesome-sass'
 
 # access control stuff
 gem 'omniauth-github'
+gem 'pundit'
 
 # better console (useful even in production)
 gem 'pry-rails'
