@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :datasets
   root to: 'home#show'
 
   # auth stuff

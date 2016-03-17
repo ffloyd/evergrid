@@ -1,0 +1,25 @@
+h1 Listing datasets
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @datasets.each do |dataset|
+      tr
+        td = dataset.name
+        td = dataset.description
+        td = dataset.user
+        td = link_to 'Show', dataset
+        td = link_to 'Edit', edit_dataset_path(dataset)
+        td = link_to 'Destroy', dataset, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Dataset', new_dataset_path

@@ -4,7 +4,8 @@ nav.navbar.navbar-default
       = link_to 'Evergrid', root_path, class: 'navbar-brand'
     ul.nav.navbar-nav
       li= link_to 'Projects', '#'
-      li= link_to 'Datasets', '#'
+      - if policy(Dataset).index?
+        li= link_to 'Datasets', datasets_path
       li= link_to 'Datacenters', '#'
     .navbar-right
       - if signed_in?
