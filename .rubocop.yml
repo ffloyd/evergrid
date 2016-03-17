@@ -1,0 +1,14 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - db/schema.rb
+    - bin/*
+
+Rails:
+  Enabled: true
+
+LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
