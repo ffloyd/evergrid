@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore private stuff
+config/database.yml
+config/secrets.yml
