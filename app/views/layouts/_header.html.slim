@@ -1,0 +1,18 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      = link_to 'Evergrid', root_path, class: 'navbar-brand'
+    ul.nav.navbar-nav
+      li= link_to 'Projects', '#'
+      li= link_to 'Datasets', '#'
+      li= link_to 'Datacenters', '#'
+    .navbar-right
+      - if false
+        = link_to '#', class: 'btn btn-default navbar-btn'
+          i.fa.fa-github
+          | &nbsp;
+          | Sign In
+      - else
+        = link_to 'Roman Kolesnev', '#', class: 'navbar-text'
+        = link_to 'Log Out', '#', class: 'btn btn-default navbar-btn'
+        

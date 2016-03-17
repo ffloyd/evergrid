@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # rendering & frontend stuff
 gem 'slim-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -48,4 +50,5 @@ group :development do
 
   # linting stuff
   gem 'rubocop'
+  gem 'scss-lint'
 end
