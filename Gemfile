@@ -31,6 +31,9 @@ gem 'font-awesome-sass'
 gem 'omniauth-github'
 gem 'pundit'
 
+# other stuff
+gem 'responders'
+
 # better console (useful even in production)
 gem 'pry-rails'
 
