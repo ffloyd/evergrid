@@ -1,0 +1,10 @@
+.panel.panel-default
+  .panel-heading
+    h3.panel-title= dataset.name
+  .panel-body
+    p= dataset.description
+    .pull-right
+      .btn-group.btn-group-sm
+        = link_to 'Show', dataset, class: 'btn btn-default'
+        = link_to 'Edit', edit_dataset_path(dataset), class: 'btn btn-default'
+        = link_to 'Destroy', dataset, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

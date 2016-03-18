@@ -1,15 +1,1 @@
-p#notice = notice
-
-p
-  strong Name:
-  = @dataset.name
-p
-  strong Description:
-  = @dataset.description
-p
-  strong User:
-  = @dataset.user
-
-= link_to 'Edit', edit_dataset_path(@dataset)
-'|
-= link_to 'Back', datasets_path
+= render @dataset
