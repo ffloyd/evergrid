@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
             presence: true
 
   has_many :datasets
+  has_many :datacenters
 
   class << self
     def get_by_oauth(data)

@@ -1,0 +1,9 @@
+.page-header
+  h1
+    | Listing datacenters
+
+.row
+  .col-sm-9
+    = cell('datacenter', collection: @datacenters, in_index?: true)
+  .col-sm-3
+    = link_to 'New Datacenter', new_datacenter_path, class: 'btn btn-success btn-block'
