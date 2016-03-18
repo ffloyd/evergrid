@@ -33,7 +33,7 @@ class DatasetsController < ApplicationController
   end
 
   def destroy
-    authorize @dataset
+    @dataset.destroy
     respond_with(@dataset)
   end
 

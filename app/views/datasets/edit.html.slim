@@ -1,4 +1,8 @@
 .page-header
   h1 Editing dataset
 
-== render 'form'
+.col-sm-9
+  == render 'form'
+.col-sm-3
+  = link_to 'Back', datasets_path, class: 'btn btn-default btn-block'
+  = link_to 'Destroy', @dataset, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger btn-block'

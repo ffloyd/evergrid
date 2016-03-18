@@ -27,6 +27,8 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 gem 'bootstrap_form'
+gem 'cells'
+gem 'cells-slim'
 
 # access control stuff
 gem 'omniauth-github'
