@@ -21,6 +21,7 @@ class DatacenterPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
+      return scope.none unless user.present?
       scope.where(id: user.datacenters.select(:id))
     end
   end

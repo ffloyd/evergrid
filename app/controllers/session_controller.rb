@@ -9,7 +9,7 @@ class SessionController < ApplicationController
   def destroy
     authorize :session
     session[:user_id] = nil
-    redirect_to :back
+    redirect_to root_path
   end
 
   private

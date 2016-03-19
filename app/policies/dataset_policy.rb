@@ -21,6 +21,7 @@ class DatasetPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
+      return scope.none unless user.present?
       scope.where(id: user.datasets.select(:id))
     end
   end
