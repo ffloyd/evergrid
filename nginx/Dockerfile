@@ -14,7 +14,7 @@ WORKDIR $RAILS_ROOT
 RUN mkdir log
 
 # copy our Nginx config template
-COPY config/containers/nginx.conf /tmp/evergrid_rails.nginx
+COPY nginx.conf /tmp/evergrid_rails.nginx
 
 # substitute variable references in the Nginx config template for real values from the environment
 # put the final config in its place
