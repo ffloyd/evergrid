@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  port: 5432
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: evergrid_development
+
+test:
+  <<: *default
+  database: evergrid_test
+
+production:
+  <<: *default
+  database: evergrid

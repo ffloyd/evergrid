@@ -13,5 +13,4 @@
 /tmp
 
 # Ignore private stuff
-config/database.yml
-config/secrets.yml
+.env
