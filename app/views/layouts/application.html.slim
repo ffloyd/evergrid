@@ -2,11 +2,18 @@ doctype html
 html
   head
     title Evergrid
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
 
   body
     = render 'layouts/header'
     .container
+      - if flash.any?
+       - flash.each do |name, msg|
+         div class="alert alert-#{name == 'alert' ? 'danger' : 'success'} alert-dismissible" role="alert"
+           button.close type="button" data-dismiss="alert"
+             span aria-hidden="true" &times;
+             span.sr-only Close
+           = msg
       = yield
