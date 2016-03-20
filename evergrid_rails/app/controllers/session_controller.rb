@@ -3,7 +3,7 @@ class SessionController < ApplicationController
     authorize :session
     user = User.get_by_oauth(auth_data)
     session[:user_id] = user.id
-    redirect_to :back
+    redirect_to root_path
   end
 
   def destroy
