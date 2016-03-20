@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 docker-compose -f docker-compose.dev.yml build
-exec docker-compose -f docker-compose.dev.yml up
+exec docker-compose -f docker-compose.dev.yml run --service-ports rails
