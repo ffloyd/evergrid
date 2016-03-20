@@ -10,7 +10,7 @@ nav.navbar.navbar-default
         li= link_to 'Datacenters', datacenters_path
     .navbar-right
       - if signed_in?
-        = link_to 'Roman Kolesnev', '#', class: 'navbar-text'
+        = link_to current_user.name, '#', class: 'navbar-text'
         = link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-default navbar-btn'
       - else
         = link_to 'auth/github', class: 'btn btn-default navbar-btn'
