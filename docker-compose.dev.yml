@@ -12,8 +12,16 @@ services:
       file: common.yml
       service: db
 
-    volumes:  
+    volumes:
       - postgres-data:/var/lib/postgresql/data
+
+  core:
+    build: ./evergrid_core
+
+    volumes:
+      - ./evergrid_core:/go
+
+    command: echo Ok
 
   rails:
     extends:
@@ -28,6 +36,7 @@ services:
       - ./evergrid_rails:/evergrid_rails
 
     links:
+      - core
       - db
 
     command: ./start_dev.sh
