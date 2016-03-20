@@ -19,9 +19,9 @@ services:
     build: ./evergrid_core
 
     volumes:
-      - ./evergrid_core:/go
+      - ./evergrid_core:/go/src/evergrid
 
-    command: echo Ok
+    command: bin/hello
 
   rails:
     extends:

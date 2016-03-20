@@ -1,3 +1,5 @@
 FROM golang:1.6
 
-COPY . .
+COPY . ./src/evergrid
+
+RUN go install evergrid/hello
