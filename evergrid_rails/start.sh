@@ -10,7 +10,7 @@ bundle exec rake assets:precompile
 
 # Update DB
 echo Updating DB...
-bundle exec rake db:migrate || exec bundle exec rake db:create db:migrate
+bundle exec rake db:create db:migrate
 
 # Start server
 echo Server started

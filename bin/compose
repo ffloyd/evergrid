@@ -3,4 +3,4 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_PATH="$DIR/.."
 
-docker-compose -f $ROOT_PATH/docker-compose.dev.yml $@
+exec docker-compose -f $ROOT_PATH/docker-compose.dev.yml $@
