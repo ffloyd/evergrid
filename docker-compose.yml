@@ -1,55 +1,63 @@
-# service configuration for our web server
-nginx:
+version: '2'
 
-  # set the build context to the root of the Rails app
-  build: ./nginx
+volumes:
+  rails-bundle:
+    driver: local
+  rails-public:
+    driver: local
+  postgres-data:
+    driver: local
+  logs:
+    driver: local
 
-  # makes the web container aware of the app container
-  links:
-    - evergrid_rails
+services:
+  db:
 
-  # use app code and precompiled assets from app container
-  volumes_from:
-    - evergrid_rails
+    # use the preferred version of the official Postgres image
+    # see https://hub.docker.com/_/postgres/
+    image: postgres:9.4.5
 
-  # expose the port we configured Nginx to bind to
-  ports:
-    - "80:80"
+    # persist the database between containers by storing it in a volume
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
 
+  rails:
+    build: ./evergrid_rails
 
-# service configuration for our database
-db:
+    env_file: .env
 
-  # use the preferred version of the official Postgres image
-  # see https://hub.docker.com/_/postgres/
-  image: postgres:9.4.5
+    environment:
+      RAILS_ENV: production
+      BUNDLE_WITHOUT: development:test
 
-  # persist the database between containers by storing it in a volume
-  volumes:
-    - evergrid-postgres:/var/lib/postgresql/data
+    volumes:
+      - rails-bundle:/bundle
+      - rails-public:/evergrid_rails/public
+      - logs:/evergrid_rails/log
 
+    command: ./start.sh
 
-# service configuration for our dockerized Rails app
-evergrid_rails:
+    expose:
+      - "3000"
 
-  # use the Dockerfile next to this file
-  build: ./evergrid_rails
+    links:
+      - db
 
-  # sources environment variable configuration for our app
-  env_file: .env
+  # reverse proxy
+  nginx:
 
-  # rely on the RAILS_ENV value of the host machine
-  environment:
-    RAILS_ENV: production
+    # set the build context to the root of the Rails app
+    build: ./nginx
 
-  # shared volume for nginx container
-  volumes:
-    - /var/www/evergrid_rails
+    # makes the web container aware of the app container
+    links:
+      - rails
 
-  # makes the app container aware of the DB container
-  links:
-    - db
+    # use app code and precompiled assets from app container
+    volumes:
+      - rails-public:/evergrid_rails/public:ro
+      - logs:/evergrid_rails/log
 
-  # expose the port we configured Unicorn to bind to
-  expose:
-    - "3000"
+    # expose the port we configured Nginx to bind to
+    ports:
+      - "80:80"

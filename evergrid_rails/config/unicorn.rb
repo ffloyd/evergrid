@@ -9,9 +9,9 @@ pid "#{app_path}/tmp/pids/unicorn.pid"
 # Bind Unicorn to the container's default route, at port 3000
 listen '0.0.0.0:3000'
 
-# # Define where Unicorn should write its log files
-# stderr_path "#{app_path}/log/unicorn.stderr.log"
-# stdout_path "#{app_path}/log/unicorn.stdout.log"
+# Define where Unicorn should write its log files
+stderr_path "#{app_path}/log/unicorn.stderr.log"
+stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 # Define the number of workers Unicorn should spin up.
 # A new Rails app just needs one. You would scale this
