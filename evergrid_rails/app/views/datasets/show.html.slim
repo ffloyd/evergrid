@@ -1,5 +1,5 @@
 .col-sm-9
-  = cell('dataset', @dataset)
+  == cell('dataset', @dataset)
 .col-sm-3
   = link_to 'Back', datasets_path, class: 'btn btn-default btn-block'
   = link_to 'Edit', edit_dataset_path(@dataset), class: 'btn btn-default btn-block'

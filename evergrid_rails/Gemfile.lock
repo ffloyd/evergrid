@@ -48,6 +48,11 @@ GEM
     bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (8.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     cells (4.0.4)
       tilt (>= 1.4, < 3)
       uber (~> 0.0.9)
@@ -233,6 +238,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   byebug
+  carrierwave
   cells
   cells-slim
   coffee-rails (~> 4.1.0)

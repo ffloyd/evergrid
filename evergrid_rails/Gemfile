@@ -34,8 +34,9 @@ gem 'cells-slim'
 gem 'omniauth-github'
 gem 'pundit'
 
-# other stuff
+# backend common stuff
 gem 'responders'
+gem 'carrierwave'
 
 # better console (useful even in production)
 gem 'pry-rails'

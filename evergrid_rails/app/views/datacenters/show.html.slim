@@ -1,5 +1,5 @@
 .col-sm-9
-  = cell('datacenter', @datacenter)
+  == cell('datacenter', @datacenter)
 .col-sm-3
   = link_to 'Back', datacenters_path, class: 'btn btn-default btn-block'
   = link_to 'Edit', edit_datacenter_path(@datacenter), class: 'btn btn-default btn-block'

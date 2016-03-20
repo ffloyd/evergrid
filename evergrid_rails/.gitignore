@@ -14,3 +14,6 @@
 
 # Ignore private stuff
 .env
+
+# Ignore file storage dir
+/uploads

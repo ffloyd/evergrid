@@ -1,7 +1,7 @@
-p Datacenter description
+p Datacenter type: #{datacenter_type}
 - if in_index?
   .pull-right
     .btn-group.btn-group-sm
       = link_to 'Show', model, class: 'btn btn-default'
-      = link_to 'Edit', edit_dataset_path(model), class: 'btn btn-default'
+      = link_to 'Edit', edit_datacenter_path(model), class: 'btn btn-default'
       = link_to 'Destroy', model, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

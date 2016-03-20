@@ -5,6 +5,8 @@ volumes:
     driver: local
   rails-public:
     driver: local
+  rails-uploads:
+    driver: local
   postgres-data:
     driver: local
   logs:
@@ -32,6 +34,7 @@ services:
     volumes:
       - rails-bundle:/bundle
       - rails-public:/evergrid_rails/public
+      - rails-uploads:/evergrid_rails/uploads
       - logs:/evergrid_rails/log
 
     command: ./start.sh

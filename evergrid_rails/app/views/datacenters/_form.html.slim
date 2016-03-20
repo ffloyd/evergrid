@@ -1,4 +1,12 @@
 = bootstrap_form_for @datacenter do |f|
   = f.text_field :name
+  = f.collection_select :datacenter_type, Datacenter::DATACENTER_TYPES.to_a, :first, :second
+  
+  - if @datacenter.carina_config?
+    - filename = @datacenter.carina_config.file.filename
+    = f.file_field :carina_config, help: "Uploaded version: #{filename}"
+  - else
+    = f.file_field :carina_config
+  = f.hidden_field :carina_config_cache
   
   = f.submit

@@ -4,6 +4,6 @@
 
 .row
   .col-sm-9
-    = cell('dataset', collection: @datasets, in_index?: true)
+    == cell('dataset', collection: @datasets, in_index?: true)
   .col-sm-3
     = link_to 'New Dataset', new_dataset_path, class: 'btn btn-success btn-block'

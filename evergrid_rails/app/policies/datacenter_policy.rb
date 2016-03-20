@@ -16,7 +16,7 @@ class DatacenterPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    [:name]
+    [:name, :datacenter_type, :carina_config, :carina_config_cache]
   end
 
   class Scope < Scope
