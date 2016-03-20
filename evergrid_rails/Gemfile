@@ -29,6 +29,7 @@ gem 'font-awesome-sass'
 gem 'bootstrap_form'
 gem 'cells'
 gem 'cells-slim'
+gem 'redcarpet'
 
 # access control stuff
 gem 'omniauth-github'
