@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  db:
+    # use the preferred version of the official Postgres image
+    # see https://hub.docker.com/_/postgres/
+    image: postgres:9.4.5
+
+  rails:
+    build: ./evergrid_rails
+
+    env_file: .env

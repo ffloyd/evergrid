@@ -12,19 +12,18 @@ volumes:
 
 services:
   db:
-
-    # use the preferred version of the official Postgres image
-    # see https://hub.docker.com/_/postgres/
-    image: postgres:9.4.5
+    extends:
+      file: common.yml
+      service: db
 
     # persist the database between containers by storing it in a volume
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
   rails:
-    build: ./evergrid_rails
-
-    env_file: .env
+    extends:
+      file: common.yml
+      service: rails
 
     environment:
       RAILS_ENV: production
