@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-docker-compose -f docker-compose.dev.yml build
-exec docker-compose -f docker-compose.dev.yml run --service-ports rails
+$DIR/compose down
+$DIR/compose build
+exec $DIR/compose run --service-ports rails
