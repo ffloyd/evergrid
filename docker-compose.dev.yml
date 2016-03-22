@@ -21,7 +21,13 @@ services:
     volumes:
       - ./evergrid_core:/go/src/evergrid
 
-    command: bin/hello
+    expose:
+      - "8080"
+
+    ports:
+      - "8080:8080"
+
+    command: bin/server
 
   rails:
     extends:

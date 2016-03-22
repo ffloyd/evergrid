@@ -1,5 +1,8 @@
 FROM golang:1.6
 
-COPY . ./src/evergrid
+# install deps
+RUN go get github.com/ant0ine/go-json-rest/rest
 
-RUN go install evergrid/hello
+# update and recompile code
+COPY . ./src/evergrid
+RUN go install evergrid/server
