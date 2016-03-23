@@ -1,11 +1,10 @@
-package echo
+package status
 
 import "github.com/ant0ine/go-json-rest/rest"
 
 // Routes for echo service
 func Routes() []*rest.Route {
-	routes := []*rest.Route{
-		rest.Post("/echo", handler),
+	return []*rest.Route{
+		rest.Post("/status", handler),
 	}
-	return routes
 }

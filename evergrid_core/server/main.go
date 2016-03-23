@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"evergrid/server/services/echo"
+	"evergrid/server/services/status"
 
 	"github.com/ant0ine/go-json-rest/rest"
 )
@@ -14,7 +14,7 @@ func main() {
 	api.Use(rest.DefaultDevStack...)
 
 	router, err := rest.MakeRouter(
-		echo.Routes()...,
+		status.Routes()...,
 	)
 	if err != nil {
 		log.Fatal(err)
