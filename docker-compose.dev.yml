@@ -21,6 +21,9 @@ services:
     volumes:
       - ./evergrid_core:/go/src/evergrid
 
+    links:
+      - db
+
     expose:
       - "8080"
 
